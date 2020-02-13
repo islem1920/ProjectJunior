@@ -1,0 +1,38 @@
+
+
+inventaire_homepage:
+    path:     /index
+    defaults: { _controller: InventaireBundle:Default:index }
+
+create_enseignant:
+    path:     /createEnseignant
+    defaults: { _controller: InventaireBundle:Enseignant:create }
+
+delete_enseignant:
+    path:     /delete/{id}
+    defaults: { _controller: InventaireBundle:Enseignant:delete }
+
+read_enseignant:
+    path:     /readEnseignant
+    defaults: { _controller: InventaireBundle:Enseignant:read }
+
+
+read_salaire:
+    path:     /readSalaire
+    defaults: { _controller: InventaireBundle:salaire:read }
+
+update_salaire:
+    path:     /update/{id}
+    defaults: { _controller: InventaireBundle:salaire:update }
+
+
+
+create_e:
+    path:     /createSalaire
+    defaults: { _controller: InventaireBundle:salaire:create }
+
+delete_salaire:
+    path:     /delete/{id}
+    defaults: { _controller: InventaireBundle:salaire:delete }
+
+
