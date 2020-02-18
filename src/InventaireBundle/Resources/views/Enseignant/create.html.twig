@@ -3,3 +3,29 @@
     {{ form_start(form) }}
     {{ form_end(form) }}
 {% endblock %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salut</title>
+</head>
+<body>
+<table border="1">
+    <tr><td>Id classe</td><td>nomber d'enfant</td></tr>
+    {% for i in classes %}
+        <tr>
+            <td>{{i.idcl}}</td>
+            <td>{{ i.nbrenfcl}}</td>
+
+            <td><a href="{{ path('updateclasse',{'idcl':i.idcl}) }}">Modifier</a></td>
+
+            <td><a href="{{ path('deleteclasse',{'idcl':i.idcl}) }}" >Supprimer</a></td>
+
+        </tr>
+
+    {% endfor %}
+</table>
+</body>
+
