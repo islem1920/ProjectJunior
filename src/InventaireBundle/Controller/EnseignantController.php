@@ -35,6 +35,14 @@ class EnseignantController extends Controller
             $em->persist($enseignant);
             //sauvegarder les donnees dans BD
             $em->flush();
+            $basic  = new \Nexmo\Client\Credentials\Basic('372d5729', 'n3FnzJypbJxuwj5G');
+          /*  $client = new \Nexmo\Client($basic);
+
+            $message = $client->message()->send([
+                'to' => '21626899579',
+                'from' => 'Nexmo',
+                'text' => 'Hello from Nexmo'
+            ]); */
             return $this->redirectToRoute('read_enseignant');
         }
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -156,7 +157,7 @@
                 </li>
 
                 <li >
-                    <a href="{{ asset ('user.html')}}">
+                    <a href="{{ path ('create_enseignant')}}">
 
                         <i class="now-ui-icons users_single-02"></i>
 
@@ -164,12 +165,20 @@
                     </a>
                 </li>
 
-                <li >
+                <li>
                     <a href="{{ path ('read_enseignant')}}">
-
                         <i class="now-ui-icons design_bullet-list-67"></i>
+                        <p>Table enseignant
 
-                        <p>Table List</p>
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path ('read_salaire')}}">
+                        <i class="now-ui-icons design_bullet-list-67"></i>
+                        <p>Table salary
+
+                        </p>
                     </a>
                 </li>
 
@@ -417,7 +426,10 @@
 
     <script>
         $(document).ready(function(){
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             $('#facebook').sharrre({
                 share: {
                     facebook: true
@@ -432,7 +444,10 @@
                 template: '<i class="fab fa-facebook-f"></i> Facebook',
                 url: 'https://demos.creative-tim.com/now-ui-dashboard/examples/dashboard.html'
             });
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             $('#google').sharrre({
                 share: {
                     googlePlus: true
@@ -447,7 +462,10 @@
                 template: '<i class="fab fa-google-plus"></i> Google',
                 url: 'https://demos.creative-tim.com/now-ui-dashboard/examples/dashboard.html'
             });
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             $('#twitter').sharrre({
                 share: {
                     twitter: true
@@ -463,16 +481,20 @@
                 template: '<i class="fab fa-twitter"></i> Twitter',
                 url: 'https://demos.creative-tim.com/now-ui-dashboard/examples/dashboard.html'
             });
+<<<<<<< Updated upstream
 
 
 
 
+=======
+>>>>>>> Stashed changes
             // Facebook Pixel Code Don't Delete
             !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
                 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
                 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
                 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
                 document,'script','connect.facebook.net/en_US/fbevents.js');
+<<<<<<< Updated upstream
 
             try{
                 fbq('init', '111649226022273');
@@ -482,6 +504,14 @@
                 console.log('Facebook Track Error:', err);
             }
 
+=======
+            try{
+                fbq('init', '111649226022273');
+                fbq('track', "PageView");
+            }catch(err) {
+                console.log('Facebook Track Error:', err);
+            }
+>>>>>>> Stashed changes
         });
     </script>
     <noscript>
@@ -496,6 +526,7 @@
             $().ready(function(){
                 $sidebar = $('.sidebar');
                 $sidebar_img_container = $sidebar.find('.sidebar-background');
+<<<<<<< Updated upstream
 
                 $full_page = $('.full-page');
 
@@ -506,13 +537,23 @@
 
                 fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
 
+=======
+                $full_page = $('.full-page');
+                $sidebar_responsive = $('body > .navbar-collapse');
+                sidebar_mini_active = true;
+                window_width = $(window).width();
+                fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+>>>>>>> Stashed changes
                 // if( window_width > 767 && fixed_plugin_open == 'Dashboard' ){
                 //     if($('.fixed-plugin .dropdown').hasClass('show-dropdown')){
                 //         $('.fixed-plugin .dropdown').addClass('show');
                 //     }
                 //
                 // }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                 $('.fixed-plugin a').click(function(event){
                     // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
                     if($(this).hasClass('switch-trigger')){
@@ -524,6 +565,7 @@
                         }
                     }
                 });
+<<<<<<< Updated upstream
 
                 $('.fixed-plugin .background-color span').click(function(){
                     $(this).siblings().removeClass('active');
@@ -539,10 +581,23 @@
                         $full_page.attr('filter-color',new_color);
                     }
 
+=======
+                $('.fixed-plugin .background-color span').click(function(){
+                    $(this).siblings().removeClass('active');
+                    $(this).addClass('active');
+                    var new_color = $(this).data('color');
+                    if($sidebar.length != 0){
+                        $sidebar.attr('data-color',new_color);
+                    }
+                    if($full_page.length != 0){
+                        $full_page.attr('filter-color',new_color);
+                    }
+>>>>>>> Stashed changes
                     if($sidebar_responsive.length != 0){
                         $sidebar_responsive.attr('data-color',new_color);
                     }
                 });
+<<<<<<< Updated upstream
 
                 $('.fixed-plugin .img-holder').click(function(){
                     $full_page_background = $('.full-page-background');
@@ -553,21 +608,34 @@
 
                     var new_image = $(this).find("img").attr('src');
 
+=======
+                $('.fixed-plugin .img-holder').click(function(){
+                    $full_page_background = $('.full-page-background');
+                    $(this).parent('li').siblings().removeClass('active');
+                    $(this).parent('li').addClass('active');
+                    var new_image = $(this).find("img").attr('src');
+>>>>>>> Stashed changes
                     if( $sidebar_img_container.length !=0 && $('.switch-sidebar-image input:checked').length != 0 ){
                         $sidebar_img_container.fadeOut('fast', function(){
                             $sidebar_img_container.css('background-image','url("' + new_image + '")');
                             $sidebar_img_container.fadeIn('fast');
                         });
                     }
+<<<<<<< Updated upstream
 
                     if($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0 ) {
                         var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
 
+=======
+                    if($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0 ) {
+                        var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+>>>>>>> Stashed changes
                         $full_page_background.fadeOut('fast', function(){
                             $full_page_background.css('background-image','url("' + new_image_full_page + '")');
                             $full_page_background.fadeIn('fast');
                         });
                     }
+<<<<<<< Updated upstream
 
                     if( $('.switch-sidebar-image input:checked').length == 0 ){
                         var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
@@ -577,37 +645,60 @@
                         $full_page_background.css('background-image','url("' + new_image_full_page + '")');
                     }
 
+=======
+                    if( $('.switch-sidebar-image input:checked').length == 0 ){
+                        var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+                        var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+                        $sidebar_img_container.css('background-image','url("' + new_image + '")');
+                        $full_page_background.css('background-image','url("' + new_image_full_page + '")');
+                    }
+>>>>>>> Stashed changes
                     if($sidebar_responsive.length != 0){
                         $sidebar_responsive.css('background-image','url("' + new_image + '")');
                     }
                 });
+<<<<<<< Updated upstream
 
                 $('.switch-sidebar-image input').on("switchChange.bootstrapSwitch", function(){
                     $full_page_background = $('.full-page-background');
 
+=======
+                $('.switch-sidebar-image input').on("switchChange.bootstrapSwitch", function(){
+                    $full_page_background = $('.full-page-background');
+>>>>>>> Stashed changes
                     $input = $(this);
                     if($input.is(':checked')){
                         if($sidebar_img_container.length != 0){
                             $sidebar_img_container.fadeIn('fast');
                             $sidebar.attr('data-image','#');
                         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                         if($full_page_background.length != 0){
                             $full_page_background.fadeIn('fast');
                             $full_page.attr('data-image','#');
                         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                         background_image = true;
                     } else {
                         if($sidebar_img_container.length != 0){
                             $sidebar.removeAttr('data-image');
                             $sidebar_img_container.fadeOut('fast');
                         }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                         if($full_page_background.length != 0){
                             $full_page.removeAttr('data-image','#');
                             $full_page_background.fadeOut('fast');
                         }
+<<<<<<< Updated upstream
 
                         background_image = false;
                     }
@@ -616,6 +707,13 @@
                 $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function(){
                     var $btn = $(this);
 
+=======
+                        background_image = false;
+                    }
+                });
+                $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function(){
+                    var $btn = $(this);
+>>>>>>> Stashed changes
                     if(sidebar_mini_active == true){
                         $('body').removeClass('sidebar-mini');
                         sidebar_mini_active = false;
@@ -625,12 +723,18 @@
                         sidebar_mini_active = true;
                         nowuiDashboard.showSidebarMessage('Sidebar mini activated');
                     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                     // we simulate the window Resize so the charts will get updated in realtime.
                     var simulateWindowResize = setInterval(function(){
                         window.dispatchEvent(new Event('resize'));
                     },180);
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                     // we stop the simulation of Window Resize after the animations are completed
                     setTimeout(function(){
                         clearInterval(simulateWindowResize);
@@ -644,7 +748,10 @@
         $(document).ready(function(){
             // Javascript method's body can be found in js/demos.js
             demo.initDashboardPageCharts();
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         });
     </script>
 
@@ -656,5 +763,9 @@
         })(window,document,'script','dataLayer','GTM-NKDMSK6');</script>
     <!-- End Google Tag Manager -->
 {% endblock %}
+<<<<<<< Updated upstream
 </html>
 
+=======
+</html>
+>>>>>>> Stashed changes
