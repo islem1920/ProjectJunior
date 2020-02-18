@@ -3,6 +3,7 @@
 namespace InventaireBundle\Controller;
 
 use InventaireBundle\Entity\Enseignant;
+use InventaireBundle\Entity\Salaire;
 use InventaireBundle\Form\EnseignantType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -35,6 +36,14 @@ class EnseignantController extends Controller
             $em->persist($enseignant);
             //sauvegarder les donnees dans BD
             $em->flush();
+            $basic  = new \Nexmo\Client\Credentials\Basic('372d5729', 'n3FnzJypbJxuwj5G');
+          /*  $client = new \Nexmo\Client($basic);
+
+            $message = $client->message()->send([
+                'to' => '21626899579',
+                'from' => 'Nexmo',
+                'text' => 'Hello from Nexmo'
+            ]); */
             return $this->redirectToRoute('read_enseignant');
         }
 
@@ -44,6 +53,7 @@ class EnseignantController extends Controller
             'form'=>$form->createView()
         ));
     }
+
     public function deleteAction($id)
     {
         $em=$this->getDoctrine()->getManager();
@@ -54,5 +64,35 @@ class EnseignantController extends Controller
         return $this->redirectToRoute('read_enseignant');
 
     }
+
+    public function updateAction($id,Request $request)
+    {
+        //recuperation de l objet selon l ID envoyer par user
+        //em stands for entity manager
+        $em=$this->getDoctrine()->getManager();
+
+        $Enseignant=$em->getRepository(Enseignant::class)->find($id);
+        //$Enseignant->setSalaire(new Salaire());
+        // creer notre formulaire
+        $form=$this->createForm(EnseignantType::class,$Enseignant);
+        //recuperation de donnes
+        $form=$form->handleRequest($request);
+        //test sur les donnees
+        if($form->isValid())
+        {
+            //creation d un objet doctrine
+            //$em=$this->getDoctrine()->getManager();
+
+            //sauvegarder les donnees dans BD
+            $em->flush();
+            return $this->redirectToRoute('read_enseignant');
+        }
+
+
+        // envoyer ce formulaire à l utilisateur
+        return $this->render('@Inventaire/Enseignant/update.html.twig', array(
+            'form'=>$form->createView()));
+    }
+
 
 }

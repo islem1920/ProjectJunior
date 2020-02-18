@@ -78,51 +78,54 @@
         </div>
     </nav>
     <div class="card">
-    <div class="card-header">
-        <h4 class="card-title">Tables des Ensegnants</h4>
 
-    </div>
-    <div class="content">
-    <div class="row">
-    <div class="col-md-12">
+        <div class="card-header">
+            <h4 class="card-title">Tables des Ensegnants</h4>
 
-    <div class="card-body">
-    <div class="table-responsive">
-    <table class="table">
-        <thead class=" text-primary">
-        <tr>
-            <th>ID</th>
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>E-Mail</th>
-            <th>Tel</th>
-            <th>Salaire</th>
-            <th>Prime</th>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12">
 
-        </tr>
-        </thead>
-        <tbody>
-    {% for i in Enseignant %}
-        <tr>
-            <td>{{i.id}}</td>
-            <td>{{ i.nom }}</td>
-            <td>{{ i.prenom }}</td>
-            <td>{{ i.email }}</td>
-            <td>{{ i.tel }}</td>
-            <td>{{ i.salaire.chiffre }}</td>
-            <td>{{ i.salaire.prime }}</td>
-            <td><a href="{{ path('delete_enseignant',{'id':i.id}) }}">Supprimer</a></td>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nom</th>
+                                    <th>Prenom</th>
+                                    <th>E-Mail</th>
+                                    <th>Tel</th>
+                                    <th>Salaire</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for i in Enseignant %}
+                                    <tr>
+                                        <td>{{i.id}}</td>
+                                        <td>{{ i.nom }}</td>
+                                        <td>{{ i.prenom }}</td>
+                                        <td>{{ i.email }}</td>
+                                        <td>{{ i.tel }}</td>
+                                        {% if i.salaire is null %}
+                                            <td><a href="{{ path('update_enseignant',{'id':i.id} ) }}">Pas de salaire</a> </td>
+                                        {% else %}
+                                        <td>{{ i.salaire.chiffre + i.salaire.prime}}</td>
+                                            {% endif %}
+                                        <td><a href="{{ path('delete_enseignant',{'id':i.id}) }}">Supprimer</a></td>
 
 
-         </tr>
+                                    </tr>
 
-    {% endfor %}
-        </tbody>
-</table>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

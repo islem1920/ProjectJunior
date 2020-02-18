@@ -16,6 +16,12 @@ read_enseignant:
     path:     /readEnseignant
     defaults: { _controller: InventaireBundle:Enseignant:read }
 
+update_enseignant:
+    path:     /updateEnseignant/{id}
+    defaults: { _controller: InventaireBundle:Enseignant:update }
+
+
+
 
 read_salaire:
     path:     /readSalaire
@@ -32,7 +38,7 @@ create_e:
     defaults: { _controller: InventaireBundle:salaire:create }
 
 delete_salaire:
-    path:     /delete/{id}
+    path:     /deleteSalaire/{id}
     defaults: { _controller: InventaireBundle:salaire:delete }
 
 

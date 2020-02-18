@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    {{ form_start(form) }}
+        {{ form_widget(form.nom, { 'type': 'hidden'}) }}
+    {{ form_widget(form.prenom, { 'type': 'hidden'}) }}
+    {{ form_widget(form.email, { 'type': 'hidden'}) }}
+    {{ form_widget(form.tel, { 'type': 'hidden'}) }}
+
+    {{ form_end(form) }}
+{% endblock %}
