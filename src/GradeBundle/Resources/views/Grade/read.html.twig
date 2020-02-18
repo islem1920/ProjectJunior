@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salut</title>
+</head>
+<body>
+<table border="1">
+    <tr><td>Id grade</td><td>nomber classe</td><td>nomber d'enfant grade</td><td>nom grade</td></tr>
+    {% for i in gra %}
+        <tr>
+            <td>{{i.idgr}}</td>
+            <td>{{ i.nbrclasse}}</td>
+            <td>{{ i.nbrenfgr}}</td>
+            <td>{{ i.nomgr}}</td>
+
+            <td><a href="{{ path('updategrade',{'idgr':i.idgr}) }}" >Modifier</a></td>
+
+            <td><a href="{{ path('deletegrade',{'idgr':i.idgr}) }}">Supprimer</a></td>
+
+        </tr>
+
+    {% endfor %}
+</table>
+</body>

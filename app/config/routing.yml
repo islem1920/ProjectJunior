@@ -15,5 +15,10 @@ app:
     type: annotation
 
 
+grade:
+    resource: "@GradeBundle/Resources/config/routing.yml"
+    prefix:   /grade
+
+
 
 
