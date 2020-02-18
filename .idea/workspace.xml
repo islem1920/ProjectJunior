@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e4d6a94-5518-47e8-a4ad-5567b4a423c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Composer_2_9_20__8_01_PM_c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Composer_18_02_2020__11_19_c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_2_9_20__8_03_PM_s.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_18_02_2020__11_40_s.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.phar" beforeDir="false" afterPath="$PROJECT_DIR$/composer.phar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,11 +150,11 @@
       <command value="composer install" />
       <command value="c composer install" />
       <command value="c  install" />
-      <command value="s cache:clear" />
       <command value="php -d memory_limit=-1 composer.phar require friendsofsymfony/user-bundle &quot;~2.0&quot;" />
-      <command value="c dump-autoload" />
       <command value="s debug:router" />
       <command value="s doctrine:schema:update --force" />
+      <command value="c dump-autoload" />
+      <command value="s cache:clear" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -202,7 +199,7 @@
       <workItem from="1581329709699" duration="38027000" />
       <workItem from="1581455862313" duration="42366000" />
       <workItem from="1581582458455" duration="24836000" />
-      <workItem from="1582016133320" duration="4787000" />
+      <workItem from="1582016133320" duration="7124000" />
     </task>
     <servers />
   </component>
