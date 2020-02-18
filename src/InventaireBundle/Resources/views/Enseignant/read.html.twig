@@ -109,12 +109,11 @@
                                         <td>{{ i.prenom }}</td>
                                         <td>{{ i.email }}</td>
                                         <td>{{ i.tel }}</td>
-                                        {% if i.salaire.chiffre == NULL %}
-                                        <td>Pas de salaire</td>
+                                        {% if i.salaire is null %}
+                                            <td><a href="{{ path('update_enseignant',{'id':i.id} ) }}">Pas de salaire</a> </td>
                                         {% else %}
                                         <td>{{ i.salaire.chiffre + i.salaire.prime}}</td>
                                             {% endif %}
-                                       <!-- <td>{{ i.salaire.prime }}</td> -->
                                         <td><a href="{{ path('delete_enseignant',{'id':i.id}) }}">Supprimer</a></td>
 
 

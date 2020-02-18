@@ -16,6 +16,12 @@ read_enseignant:
     path:     /readEnseignant
     defaults: { _controller: InventaireBundle:Enseignant:read }
 
+update_enseignant:
+    path:     /updateEnseignant/{id}
+    defaults: { _controller: InventaireBundle:Enseignant:update }
+
+
+
 
 read_salaire:
     path:     /readSalaire
