@@ -1,0 +1,49 @@
+grade_homepage:
+    path:     /grade1
+    defaults: { _controller: GradeBundle:Default:index }
+
+
+grade2:
+    path:     /grade2
+    defaults: { _controller: GradeBundle:Default:grade2 }
+
+grade3:
+    path:     /grade3
+    defaults: { _controller: GradeBundle:Default:grade3 }
+
+
+readclasse:
+    path:     /readclasse
+    defaults: { _controller: GradeBundle:Classe:read }
+
+createclasse:
+    path:     /createclasse
+    defaults: { _controller: GradeBundle:Classe:create }
+
+updateclasse:
+    path:     /updateclasse/{idcl}
+    defaults: { _controller: GradeBundle:Classe:update }
+
+deleteclasse:
+    path:     /deleteclasse/{idcl}
+    defaults: { _controller: GradeBundle:Classe:delete }
+
+searchclasse:
+    path:     /searchclasse
+    defaults: { _controller: GradeBundle:Classe:search }
+
+readgrade:
+    path:     /readgrade
+    defaults: { _controller: GradeBundle:Grade:read }
+
+creategrade:
+    path:     /creategrade
+    defaults: { _controller: GradeBundle:Grade:create }
+
+updategrade:
+    path:     /updategrade/{idgr}
+    defaults: { _controller: GradeBundle:Grade:update }
+
+deletegrade:
+    path:     /deletegrade/{idgr}
+    defaults: { _controller: GradeBundle:Grade:delete }

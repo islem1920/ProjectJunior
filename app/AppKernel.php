@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new InventaireBundle\InventaireBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new ReclamationBundle\ReclamationBundle(),
+            new GradeBundle\GradeBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
