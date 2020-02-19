@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9e4d6a94-5518-47e8-a4ad-5567b4a423c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GradeBundle/Resources/views/Classe/read.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/GradeBundle/Resources/views/Classe/read.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InventaireBundle/Resources/views/Enseignant/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/InventaireBundle/Resources/views/Enseignant/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GradeBundle/Resources/views/Classe/update.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/GradeBundle/Resources/views/Classe/update.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -226,7 +225,7 @@
       <workItem from="1581329709699" duration="38027000" />
       <workItem from="1581455862313" duration="42366000" />
       <workItem from="1581582458455" duration="24836000" />
-      <workItem from="1582016133320" duration="8032000" />
+      <workItem from="1582016133320" duration="10857000" />
     </task>
     <servers />
   </component>
