@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new ReclamationBundle\ReclamationBundle(),
             new GradeBundle\GradeBundle(),
             new MedcinBundle\MedcinBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -34,13 +34,21 @@ class EnfantController extends Controller
         ));
     }
 
-    public function readAction()
+    public function readAction(Request $request)
     {
         //Creer un objet Doctrine
         $em=$this->getDoctrine();
         $tab=$em->getRepository(Enfant::class)->findAll();
+
+        /**
+         * @var $pagination \Knp\Component\Pager\Paginator
+         */
+        $paginator=$this->get('knp_paginator');
+        $result=$paginator->paginate($tab,
+            $request->query->getInt('page',1),
+            $request->query->getInt('limit',2));
         return $this->render('@Medcin/Enfant/read.html.twig', array(
-            'consul'=>$tab
+            'consul'=>$result
         ));
     }
 

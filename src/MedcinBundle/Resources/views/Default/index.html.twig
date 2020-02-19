@@ -1,10 +1,13 @@
 {% extends 'admin.html.twig' %}
 
 {% block content %}
-    <center><b><a href="{{ path('read_consultation') }}">Afficher les consultations</a></b></center><br>
-    <center><b><a href="{{ path('read_enfant') }}">Afficher les enfants</a></b></center><br>
-    <center><b><a href="{{ path('read_medecin') }}"><i class="now-ui-icons health_ambulance"></i>Afficher les medecins
-            </a></b></center>
+    <center><b><a href="{{ path('read_consultation') }}">Afficher les consultations
+                <i class="now-ui-icons files_single-copy-04"></i></a></b></center><br>
+    <center><b><a href="{{ path('read_enfant') }}">Afficher les enfants
+                <i class="now-ui-icons emoticons_satisfied"></i>
+            </a></b></center><br>
+    <center><b><a href="{{ path('read_medecin') }}">Afficher les medecins
+                <i class="now-ui-icons health_ambulance"></i></a></b></center>
 
 
 {% endblock %}
