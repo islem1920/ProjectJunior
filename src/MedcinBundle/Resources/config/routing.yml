@@ -70,3 +70,7 @@ delete_medecin:
 searchEnfant:
     path:     /searchEnfant
     defaults: { _controller: MedcinBundle:Enfant:search }
+
+generer_pdf:
+    path:     /genererPDF
+    defaults: { _controller: MedcinBundle:Enfant:pdf }

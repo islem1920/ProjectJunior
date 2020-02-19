@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new GradeBundle\GradeBundle(),
             new MedcinBundle\MedcinBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            //new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

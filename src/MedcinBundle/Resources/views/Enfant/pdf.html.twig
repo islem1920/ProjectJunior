@@ -1,7 +1,5 @@
 
-{% extends 'admin.html.twig' %}
 
-{% block content %}
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
@@ -96,7 +94,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <center><b><a href="{{ path('create_enfant') }}">Ajouter enfant</a></b></center>
+
                             <table class="table">
                                 <thead class=" text-primary">
                                 <tr>
@@ -111,8 +109,7 @@
 
                                         <td>{{ i.nom }}</td>
                                         <td>{{ i.age }}</td>
-                                        <td><a href="{{ path('update_enfant',{'id':i.id}) }}">Modifier</a></td>
-                                        <td><a href="{{ path('delete_enfant',{'id':i.id}) }}">Supprimer</a></td>
+
 
 
 
@@ -123,24 +120,10 @@
                                 </tbody>
                             </table>
                         </div>
-                        {{ knp_pagination_render(consul) }}
-                        <center><p></p><b><a href="{{ path('create_consultation') }}">Faire une Consultation</a></b></p>
-                        <b><a href="{{ path('create_medecin') }}">Ajouter un medecin</a></b></center>
-                       <center> <b><a href="{{ path('generer_pdf') }}">Generer un pdf</a></b></center>
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function(){
-            $("#myInputANIS").on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                $("#myTable tr").filter(function() {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        });
-    </script>
-{% endblock %}
+

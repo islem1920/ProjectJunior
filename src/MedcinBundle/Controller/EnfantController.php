@@ -6,6 +6,8 @@ use MedcinBundle\Entity\Enfant;
 use MedcinBundle\Form\EnfantType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class EnfantController extends Controller
 {
@@ -46,7 +48,7 @@ class EnfantController extends Controller
         $paginator=$this->get('knp_paginator');
         $result=$paginator->paginate($tab,
             $request->query->getInt('page',1),
-            $request->query->getInt('limit',2));
+            $request->query->getInt('limit',4));
         return $this->render('@Medcin/Enfant/read.html.twig', array(
             'consul'=>$result
         ));
@@ -103,6 +105,37 @@ class EnfantController extends Controller
         return $this->render('@Medcin/Enfant/search.html.twig', array(
             'consul'=>$tab
         ));
+    }
+
+    public function pdfAction(Request $request)
+    {
+        $pdfOptions= new Options();
+        $pdfOptions->set('defaultFont','Arial');
+
+        $dompdf = new Dompdf($pdfOptions);
+
+        $em=$this->getDoctrine()->getManager();
+       // $inventaire=$em->getRepository(InventaireC::class)->find($id);
+        $tab=$em->getRepository(Enfant::class)->findAll();
+
+        $html= $this->renderView('@Medcin/Enfant/pdf.html.twig', array(
+            "consul"=>$tab
+        ));
+
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4','portrait');
+        $dompdf->render();
+        $output=$dompdf->output();
+
+        //$nom=$inventaire->getPartenaire()->getNom();
+        $path='C:\Users\yanisinfo\Desktop\junior/Enfant.pdf';
+
+        $pdfFilePath=$path;
+
+        file_put_contents($pdfFilePath,$output);
+
+        return $this->redirectToRoute("read_enfant");
+
     }
 
 }
