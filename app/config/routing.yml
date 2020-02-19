@@ -20,5 +20,10 @@ grade:
     prefix:   /grade
 
 
+medcin:
+    resource: "@MedcinBundle/Resources/config/routing.yml"
+    prefix:   /m
+
+
 
 
