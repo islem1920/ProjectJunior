@@ -1,4 +1,3 @@
-
 {% extends 'admin.html.twig' %}
 
 {% block content %}
@@ -88,18 +87,14 @@
             <div class="col-md-12">
 
                 <div class="card card-plain">
-                    <div class="card-header">
-                        <h4 class="card-title"> Table on Plain Background</h4>
 
-                        <p class="category"> Here is a subtitle for this table</p>
-
-                    </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
                                 <th scope="col">Id classe</th>
                                 <th scope="col">Nomber D'enfant</th>
+                                <th scope="col">Nom Classe</th>
 
 
 
@@ -110,10 +105,12 @@
                                     <tr>
                                         <td>{{i.idcl}}</td>
                                         <td>{{ i.nbrenfcl}}</td>
+                                        <td>{{ i.nomclasse}}</td>
 
                                         <td><a href="{{ path('updateclasse',{'idcl':i.idcl}) }}">Modifier</a></td>
 
                                         <td><a href="{{ path('deleteclasse',{'idcl':i.idcl}) }}" >Supprimer</a></td>
+                                        <td><a href="{{ path('createclasse') }}" >Create Classe</a></td>
 
 
                                     </tr>

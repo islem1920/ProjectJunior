@@ -35,6 +35,16 @@ class Classe
     private $grade;
 
 
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomclasse", type="string", length=255)
+     */
+    private $nomclasse;
+
+
     /**
      * Get idcl
      *
@@ -91,5 +101,53 @@ class Classe
     public function getGrade()
     {
         return $this->grade;
+    }
+
+    /**
+     * Set classe
+     *
+     * @param string $classe
+     *
+     * @return Classe
+     */
+    public function setClasse($classe)
+    {
+        $this->classe = $classe;
+
+        return $this;
+    }
+
+    /**
+     * Get classe
+     *
+     * @return string
+     */
+    public function getClasse()
+    {
+        return $this->classe;
+    }
+
+    /**
+     * Set nomclasse
+     *
+     * @param string $nomclasse
+     *
+     * @return Classe
+     */
+    public function setNomclasse($nomclasse)
+    {
+        $this->nomclasse = $nomclasse;
+
+        return $this;
+    }
+
+    /**
+     * Get nomclasse
+     *
+     * @return string
+     */
+    public function getNomclasse()
+    {
+        return $this->nomclasse;
     }
 }
