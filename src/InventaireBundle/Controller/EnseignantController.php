@@ -7,15 +7,55 @@ use InventaireBundle\Entity\Salaire;
 use InventaireBundle\Form\EnseignantType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 
 class EnseignantController extends Controller
 {
     public function readAction()
     {
-        $em=$this->getDoctrine();
-        $tab=$em->getRepository(Enseignant::class)->findAll();
+
+       $em=$this->getDoctrine()->getManager();
+       $tab=$em->getRepository(Enseignant::class)->findAll();
+
+        $montantTotal=0;
+        foreach ($tab as $row)
+        {
+            $montantTotal+=$row->getSalaire()->getChiffre();
+
+        }
+
+        $data= array();
+        $stat=['Enseignant','Salaire'];
+        $nb=0;
+        array_push($data,$stat);
+        foreach ($tab as $row)
+        {
+            $stat=array();
+
+
+            array_push($stat,$row->getNom(),$row->getSalaire()->getChiffre());
+
+            $nb=$row->getSalaire()->getChiffre();
+
+            $stat=[$row->getNom()." ".$row->getPrenom(),$nb];
+            array_push($data,$stat);
+        }
+
+        $pieChart = new PieChart();
+        $pieChart->getData()->setArrayToDataTable($data);
+        $pieChart->getOptions()->setTitle('Montant à payer par chaque partenaire');
+        $pieChart->getOptions()->setHeight(500);
+        $pieChart->getOptions()->setWidth(1125);
+        $pieChart->getOptions()->getTitleTextStyle()->setBold(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setColor('#f47684');
+        $pieChart->getOptions()->getTitleTextStyle()->setItalic(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setFontName('Arial');
+        $pieChart->getOptions()->getTitleTextStyle()->setFontSize(20);
+
+
+
         return $this->render('@Inventaire/Enseignant/read.html.twig', array(
-            'Enseignant'=>$tab
+            'Enseignant'=>$tab,'pieChart'=>$pieChart
         ));
     }
 
@@ -41,8 +81,8 @@ class EnseignantController extends Controller
 
             $message = $client->message()->send([
                 'to' => '21626899579',
-                'from' => 'Nexmo',
-                'text' => 'Hello from Nexmo'
+                'from' => 'Junior',
+                'text' => 'Hello from junior,'
             ]); */
             return $this->redirectToRoute('read_enseignant');
         }

@@ -13,7 +13,7 @@ class ReclamationsController extends Controller
 {
     public function readAction()
     {
-        $em=$this->getDoctrine();
+        $em=$this->getDoctrine()->getManager();
         $tab=$em->getRepository(Reclamations::class)->findAll();
         return $this->render('@Reclamation/Reclamations/read.html.twig', array(
             'Reclamations'=>$tab

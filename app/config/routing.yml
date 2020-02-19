@@ -1,11 +1,11 @@
 reclamation:
     resource: "@ReclamationBundle/Resources/config/routing.yml"
-    prefix:   /reclamation
+    prefix:   /
 
 
 inventaire:
     resource: "@InventaireBundle/Resources/config/routing.yml"
-    prefix: /inventaire
+    prefix: /
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"

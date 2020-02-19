@@ -5,7 +5,7 @@ inventaire_homepage:
     defaults: { _controller: InventaireBundle:Default:index }
 
 create_enseignant:
-    path:     /createEnseignant
+    path:     /admin/createEnseignant
     defaults: { _controller: InventaireBundle:Enseignant:create }
 
 delete_enseignant:
@@ -13,7 +13,7 @@ delete_enseignant:
     defaults: { _controller: InventaireBundle:Enseignant:delete }
 
 read_enseignant:
-    path:     /readEnseignant
+    path:     /admin/readEnseignant
     defaults: { _controller: InventaireBundle:Enseignant:read }
 
 update_enseignant:
