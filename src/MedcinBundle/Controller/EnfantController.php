@@ -82,4 +82,19 @@ class EnfantController extends Controller
         return $this->redirectToRoute('read_enfant');
     }
 
+    public function searchAction(Request $request)
+    {
+        $em=$this->getDoctrine();
+        $input=$request->get('nom');
+        $tab=$em->getRepository(Enfant::class)->findAll();
+        if(isset($input) & !empty($input))
+        {$titre=$request->get('nom');
+            $tab=$em->getRepository(Enfant::class)->searchTitre($input);
+        }
+
+        return $this->render('@Medcin/Enfant/search.html.twig', array(
+            'consul'=>$tab
+        ));
+    }
+
 }

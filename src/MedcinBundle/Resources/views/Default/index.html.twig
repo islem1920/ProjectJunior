@@ -1,5 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
-{% block body %}
-<p>hello world!!</p>
+{% block content %}
+    <center><b><a href="{{ path('read_consultation') }}">Afficher les consultations</a></b></center><br>
+    <center><b><a href="{{ path('read_enfant') }}">Afficher les enfants</a></b></center><br>
+    <center><b><a href="{{ path('read_medecin') }}"><i class="now-ui-icons health_ambulance"></i>Afficher les medecins
+            </a></b></center>
+
+
 {% endblock %}

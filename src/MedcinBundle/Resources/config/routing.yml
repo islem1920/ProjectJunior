@@ -67,3 +67,6 @@ update_medecin:
 delete_medecin:
     path:     /deleteMedecin/{id}
     defaults: { _controller: MedcinBundle:Medcin:delete }
+searchEnfant:
+    path:     /searchEnfant
+    defaults: { _controller: MedcinBundle:Enfant:search }
