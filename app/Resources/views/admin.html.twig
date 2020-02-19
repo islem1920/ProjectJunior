@@ -104,12 +104,10 @@
         -->
 
         <div class="logo">
-            <a href="{{ asset ('http://www.creative-tim.com/')}}" class="simple-text logo-mini">
-                CT
-            </a>
 
-            <a href="{{ asset ('http://www.creative-tim.com/')}}" class="simple-text logo-normal">
-                Creative Tim
+
+            <a href="{{ path ('homepage')}}" class="simple-text logo-normal">
+                Hosters Tim
             </a>
 
         </div>
@@ -121,7 +119,7 @@
 
 
                 <li class="active "  >
-                    <a href="{{ asset ('dashboard.html')}}">
+                    <a href="{{ path ('homepage')}}">
 
                         <i class="now-ui-icons design_app"></i>
 
@@ -129,12 +127,21 @@
                     </a>
                 </li>
 
-                <li >
+                <li>
                     <a href="{{ path ('readclasse')}}">
 
                         <i class="now-ui-icons education_atom"></i>
 
                         <p>Classe</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ path ('readgrade')}}">
+
+                        <i class="now-ui-icons education_atom"></i>
+
+                        <p>Grade</p>
                     </a>
                 </li>
 
@@ -444,10 +451,9 @@
                 template: '<i class="fab fa-facebook-f"></i> Facebook',
                 url: 'https://demos.creative-tim.com/now-ui-dashboard/examples/dashboard.html'
             });
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
+
+
             $('#google').sharrre({
                 share: {
                     googlePlus: true
