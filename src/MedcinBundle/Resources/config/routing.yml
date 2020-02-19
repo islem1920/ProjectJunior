@@ -1,0 +1,69 @@
+medcin_homepage:
+    path:     /
+    defaults: { _controller: MedcinBundle:Default:index }
+
+create_consultation:
+    path:     /createConsultation
+    defaults: { _controller: MedcinBundle:Consultation:create }
+
+read_consultation:
+    path:     /readConsultation
+    defaults: { _controller: MedcinBundle:Consultation:read }
+
+update_consultation:
+    path:     /updateConsultation/{id}
+    defaults: { _controller: MedcinBundle:Consultation:update }
+
+delete_consultation:
+    path:     /deleteConsultation/{id}
+    defaults: { _controller: MedcinBundle:Consultation:delete }
+
+
+
+create_dm:
+    path:     /createdm
+    defaults: { _controller: MedcinBundle:DossierMedical:create }
+
+read_dm:
+    path:     /readdm
+    defaults: { _controller: MedcinBundle:DossierMedical:read }
+
+update_dm:
+    path:     /updatedm/{id}
+    defaults: { _controller: MedcinBundle:DossierMedical:update }
+
+delete_dm:
+    path:     /deletedm/{id}
+    defaults: { _controller: MedcinBundle:DossierMedical:delete }
+
+create_enfant:
+    path:     /createEnfant
+    defaults: { _controller: MedcinBundle:Enfant:create }
+
+read_enfant:
+    path:     /readEnfant
+    defaults: { _controller: MedcinBundle:Enfant:read }
+
+update_enfant:
+    path:     /updateEnfant/{id}
+    defaults: { _controller: MedcinBundle:Enfant:update }
+
+delete_enfant:
+    path:     /deleteEnfant/{id}
+    defaults: { _controller: MedcinBundle:Enfant:delete }
+
+create_medecin:
+    path:     /createMedecin
+    defaults: { _controller: MedcinBundle:Medcin:create }
+
+read_medecin:
+    path:     /readMedecin
+    defaults: { _controller: MedcinBundle:Medcin:read }
+
+update_medecin:
+    path:     /updateMedecin/{id}
+    defaults: { _controller: MedcinBundle:Medcin:update }
+
+delete_medecin:
+    path:     /deleteMedecin/{id}
+    defaults: { _controller: MedcinBundle:Medcin:delete }
