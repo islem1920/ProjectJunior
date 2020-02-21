@@ -48,7 +48,7 @@ class EnfantController extends Controller
         $paginator=$this->get('knp_paginator');
         $result=$paginator->paginate($tab,
             $request->query->getInt('page',1),
-            $request->query->getInt('limit',4));
+            $request->query->getInt('limit',10));
         return $this->render('@Medcin/Enfant/read.html.twig', array(
             'consul'=>$result
         ));
