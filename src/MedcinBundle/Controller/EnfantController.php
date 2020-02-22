@@ -20,7 +20,7 @@ class EnfantController extends Controller
         //recuperation de donnes
         $form=$form->handleRequest($request);
         //test sur les donnees
-        if($form->isValid())
+        if($form->isValid()&&$form->isSubmitted())
         {
             //creation d un objet doctrine
             $em=$this->getDoctrine()->getManager();

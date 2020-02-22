@@ -3,6 +3,8 @@
 namespace MedcinBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Medcin
@@ -39,6 +41,7 @@ class Medcin
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @Assert\Email
      */
     private $email;
 
