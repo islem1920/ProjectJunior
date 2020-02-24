@@ -1,0 +1,43 @@
+<html>
+<head></head>
+
+<form>
+    Titre : <input type="text" name="titre" id="titre" required><br/>
+    <input type="submit" value="Search" id="submit" hidden>
+</form>
+<p hidden>Saisir un Nom</p>
+
+<table border="1">
+    <tr><td>Nom</td><td>Age</td></tr>
+    {% for i in consul %}
+        <tr>
+            <td>{{i.nom}}</td>
+            <td>{{ i.age }}</td>
+
+            <td><a href="{{ path('delete_enfant',{'id':i.id}) }}">Supprimer</a></td>
+            <td><a href="{{ path('update_enfant',{'id':i.id}) }}">Modifier</a></td>
+
+        </tr>
+
+    {% endfor %}
+</table>
+<script src="{{ asset('jquery-min.js') }}"></script>
+<script>
+    $('#titre').keyup(function () {
+        if($('#titre').val().length<=2)
+        {
+            $('p').show();
+            $('#submit').hide();
+
+
+        }
+        else
+        {
+            $('p').hide();
+            $('#submit').show();
+        }
+
+    });
+</script>
+</body>
+</html>

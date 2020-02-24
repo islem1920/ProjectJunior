@@ -16,7 +16,7 @@ class ClasseType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nbrenfcl')
+        $builder->add('nbrenfcl')->add('nomclasse')
             ->add('grade',EntityType::class,array('class'=>Grade::class,'choice_label'=>'nomgr','multiple'=>false))
         ->add('valider',SubmitType::class);
     }/**
