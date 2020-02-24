@@ -15,7 +15,13 @@ class EnseignantController extends Controller
     {
 
        $em=$this->getDoctrine()->getManager();
-       $tab=$em->getRepository(Enseignant::class)->findAll();
+        if(isset($_GET['rech']) && $_GET['rech']!= ''){
+            $rech = $_GET['rech'];
+            $tab = $em->getRepository(Enseignant::class)->createQueryBuilder("p")
+                ->where('p.nom like :nom')->setParameter('nom', "%".$rech."%")->getQuery()->getResult();
+        }else {
+            $tab = $em->getRepository(Enseignant::class)->findAll();
+        }
 
         $montantTotal=0;
         foreach ($tab as $row)
@@ -76,8 +82,9 @@ class EnseignantController extends Controller
             $em->persist($enseignant);
             //sauvegarder les donnees dans BD
             $em->flush();
+            /*
             $basic  = new \Nexmo\Client\Credentials\Basic('372d5729', 'n3FnzJypbJxuwj5G');
-          /*  $client = new \Nexmo\Client($basic);
+            $client = new \Nexmo\Client($basic);
 
             $message = $client->message()->send([
                 'to' => '21626899579',
@@ -104,6 +111,7 @@ class EnseignantController extends Controller
         return $this->redirectToRoute('read_enseignant');
 
     }
+
 
     public function updateAction($id,Request $request)
     {

@@ -11,8 +11,8 @@ class salaireController extends Controller
 {
     public function readAction()
     {
-        $em=$this->getDoctrine();
-        $tab=$em->getRepository(salaire::class)->findAll();
+        $em=$this->getDoctrine()->getManager();
+        $tab=$em->getRepository(Salaire::class)->findAll();
         return $this->render('@Inventaire/salaire/read.html.twig', array(
             'Salaire'=>$tab
         ));

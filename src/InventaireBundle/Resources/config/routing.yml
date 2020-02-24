@@ -1,5 +1,6 @@
 
 
+
 inventaire_homepage:
     path:     /index
     defaults: { _controller: InventaireBundle:Default:index }

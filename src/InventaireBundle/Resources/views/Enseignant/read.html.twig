@@ -35,7 +35,13 @@
 
             <div class="collapse navbar-collapse justify-content-end" id="navigation">
 
-
+                <form >
+                    <div class="input-group no-border">
+                        <form action="readEnseignant" method="get">
+                            <input type="text" name="rech" value="" class="form-control" id="myInput" placeholder="Search...">
+                        </form>
+                    </div>
+                </form>
                 <form>
                     <div class="input-group no-border">
                         <form>
@@ -128,9 +134,9 @@
                                             <td>{{ i.salaire.chiffre + i.salaire.prime}}</td>
                                         {% endif %}
                                         <td><a href="{{ path('delete_enseignant',{'id':i.id}) }}"><div class="active "  >
-                                                    <a href="icons.html">
+                                                   <!-- <a href="icons.html">-->
                                                         <i class="now-ui-icons shopping_basket"></i>
-                                                    </a>
+                                                   <!-- </a>-->
                                                 </div></a></td>
 
 
@@ -139,6 +145,12 @@
                                 {% endfor %}
                                 </tbody>
                             </table>
+                            <div id="div_chart"></div>
+
+                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                            <script type="text/javascript">
+                                {{ gc_draw(pieChart, 'div_chart') }}
+                            </script>
                         </div>
                     </div>
                 </div>
