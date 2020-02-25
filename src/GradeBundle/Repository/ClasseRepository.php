@@ -10,7 +10,12 @@ namespace GradeBundle\Repository;
  */
 class ClasseRepository extends \Doctrine\ORM\EntityRepository
 {
-
+    public function myfindAll($input)
+    {
+        $query=$this->getEntityManager()
+            ->createQuery("SELECT c FROM GradeBundle:Classe c WHERE c.nomclasse = '$input'");
+        return $query->getResult();
+    }
 
 
 

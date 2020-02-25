@@ -126,4 +126,28 @@ class Classe
     {
         return $this->classe;
     }
+
+    /**
+     * Set nomclasse
+     *
+     * @param string $nomclasse
+     *
+     * @return Classe
+     */
+    public function setNomclasse($nomclasse)
+    {
+        $this->nomclasse = $nomclasse;
+
+        return $this;
+    }
+
+    /**
+     * Get nomclasse
+     *
+     * @return string
+     */
+    public function getNomclasse()
+    {
+        return $this->nomclasse;
+    }
 }

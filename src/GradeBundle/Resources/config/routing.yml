@@ -47,3 +47,20 @@ updategrade:
 deletegrade:
     path:     /deletegrade/{idgr}
     defaults: { _controller: GradeBundle:Grade:delete }
+
+readcours:
+    path:     /readcours
+    defaults: { _controller: GradeBundle:Cours:read }
+
+createcours:
+    path:     /createcours
+    defaults: { _controller: GradeBundle:Cours:create }
+
+deletecours:
+    path:     /deletecours/{id}
+    defaults: { _controller: GradeBundle:Cours:delete }
+
+
+updatecours:
+    path:     /updatecours/{id}
+    defaults: { _controller: GradeBundle:Cours:update }
