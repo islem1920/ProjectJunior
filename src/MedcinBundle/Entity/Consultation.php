@@ -3,6 +3,8 @@
 namespace MedcinBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Consultation
@@ -37,6 +39,7 @@ class Consultation
      * @var \DateTime
      *
      * @ORM\Column(name="date_const", type="date")
+     * @Assert\LessThan("today UTC",message="choisir un date valide")
      */
     private $dateConst;
 

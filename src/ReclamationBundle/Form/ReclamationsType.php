@@ -13,7 +13,11 @@ class ReclamationsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre')->add('nom')->add('email')->add('tel')->add('description');
+        $builder->add('titre', null, ['label'=> false, 'attr'=> ['class'=> 'form-control orm-control-user']])
+            ->add('nom', null, ['label'=> false, 'attr'=> ['class'=> 'form-control orm-control-user']])
+            ->add('email', null, ['label'=> false, 'attr'=> ['class'=> 'form-control orm-control-user']])
+            ->add('tel', null, ['label'=> false, 'attr'=> ['class'=> 'form-control orm-control-user']])
+            ->add('description', null, ['label'=> false, 'attr'=> ['class'=> 'form-control orm-control-user']]);
     }/**
      * {@inheritdoc}
      */

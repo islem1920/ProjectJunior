@@ -3,6 +3,8 @@
 namespace MedcinBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Enfant
@@ -25,6 +27,7 @@ class Enfant
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $nom;
 
@@ -32,6 +35,10 @@ class Enfant
      * @var int
      *
      * @ORM\Column(name="age", type="integer")
+     * @Assert\GreaterThan(
+     * value="0",
+     * message="L'age doit etre positive"
+     * )
      */
     private $age;
 
